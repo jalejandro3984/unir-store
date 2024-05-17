@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { StoreContext } from "./StoreContext";
 
+import "../styles/cart-item.css";
+
 export const CartItem = ({item}) => {
     const { removeProductFromCart, addProductToWishlist } = useContext(StoreContext);
 
@@ -16,9 +18,9 @@ export const CartItem = ({item}) => {
                     <div className="col-md-2">
                         <img src={item.image} alt={item.title} className="img-fluid rounded-start"/>
                     </div>
-                    <div className="col-md-8">
-                        <div className="card-body mx-4">
-                            <h5 className="card-title">{item.title}</h5>
+                    <div className="store__cart__item__info col-md-8">
+                        <div className="store__cart__item__info mx-4">
+                            <h5 className="card-title mb-2">{item.title}</h5>
                             <p>Qty: {item.quantity}</p>
                             <p>
                                 <button onClick={() => saveForLater(item)}
@@ -31,8 +33,8 @@ export const CartItem = ({item}) => {
                         </div>
                     </div>
                     <div className="col-md-2">
-                    <div className="card-body text-end">
-                            <p className="card-text"><strong>US${item.price}</strong></p>
+                        <div className="store__cart__item__body__price">
+                            <p className="store__cart__item__body__price--price card-text">US${item.price}</p>
                         </div>
                     </div>
                 </div>

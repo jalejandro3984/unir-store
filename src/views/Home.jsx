@@ -1,6 +1,6 @@
 import React from "react";
 import { useFetch } from "../hooks/useFetch";
-import { Category } from "../components/Category";
+import { Category } from "./Category";
 import { Loader } from "../components/Loader";
 
 export const Home = () => {

@@ -18,6 +18,7 @@ export const StoreRouter = () => {
                 <Route path="/category/:category" element={<CategoryList />}/>
                 <Route path="/products" element={<ProductList />}/>
                 <Route path="/products/:id" element={<ProductDetails />}/>
+                <Route path="/products/search/:term" element={<ProductList />}/>
                 <Route path="/wishlist/" element={<Wishlist />}/>
             </Routes>
         </Router>

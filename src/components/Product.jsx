@@ -2,6 +2,8 @@ import React from "react";
 import { Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
+import '../styles/product.css';
+
 export const Product = ({product, show_description}) => {
     const navigate = useNavigate();
     const handleCardClick = () => {
@@ -11,15 +13,15 @@ export const Product = ({product, show_description}) => {
     return (
         <Card className="m-2" style={{ width: '18rem', cursor: 'pointer' }} onClick={handleCardClick}>
             <div style={{ height: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Card.Img variant="top" src={product.image} className="product-image" />
+                <Card.Img variant="top" src={product.image} className="product__image" />
             </div>
             <Card.Body className="d-flex flex-column justify-content-between">
                 <div>
                     <Card.Title>{product.title}</Card.Title>
-                    {show_description && <Card.Text className="product-description">{product.description}</Card.Text>}
+                    {show_description && <Card.Text className="product__description">{product.description}</Card.Text>}
                 </div>
-                <div className="product-price">
-                    <strong>Price: </strong>US${product.price}
+                <div>
+                    <strong>Price: </strong> <span className="product__price">US${product.price}</span>
                 </div>
             </Card.Body>
         </Card>

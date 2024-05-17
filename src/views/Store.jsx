@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer";
 import { StoreRouter } from "../router/StoreRouter";
 import { StoreContext } from "../components/StoreContext";
 
-import "../styles/main.css";
+import "../styles/store.css";
 
 export const Store = () => {
     const [cartProducts, setCartProducts] = React.useState([]);
@@ -43,12 +43,19 @@ export const Store = () => {
     };
 
     return (
-        <div>
-            <Header />
-            <StoreContext.Provider value={{ cartProducts, wishlist, addProductToCart, removeProductFromCart, addProductToWishlist, removeProductFromWishlist }}>
-                <StoreRouter />
+        <div className="store">
+            <Header/>
+            <StoreContext.Provider value={{
+                cartProducts,
+                wishlist,
+                addProductToCart,
+                removeProductFromCart,
+                addProductToWishlist,
+                removeProductFromWishlist
+            }}>
+                <StoreRouter/>
             </StoreContext.Provider>
-            <Footer />
+            <Footer/>
         </div>
     );
 }

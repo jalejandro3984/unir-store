@@ -10,7 +10,7 @@ export const Cart = () => {
         <div>
             <h2 className="mx-2">Cart</h2>
             <div className="container mt-3">
-                { cartProducts.length === 0 && <h5 className="text-center">Your Cart is empty</h5> }
+                { cartProducts.length === 0 && <h5 className="text-center">Your cart is empty</h5> }
                 {
                     cartProducts.length > 0
                     && (

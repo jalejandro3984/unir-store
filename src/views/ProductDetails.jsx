@@ -3,8 +3,10 @@ import { useParams } from 'react-router-dom';
 import { useFetch } from '../hooks/useFetch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Loader } from "../components/Loader";
-import { StoreContext } from "../components/StoreContext";
 import { useNavigate } from "react-router-dom";
+import { StoreContext } from "../components/StoreContext";
+
+import "../styles/product-details.css";
 
 export const ProductDetails = () => {
     const { id } = useParams();
@@ -19,26 +21,33 @@ export const ProductDetails = () => {
     };
 
     return (
-        <div>
-            <div className="text-center">
-                { productResponse.isLoading && <Loader visible={productResponse.isLoading} /> }
-            </div>
-            <div className={`${ productResponse.isLoading ? "d-none " : "" } container mt-5`}>
-                <div className="row">
-                    <div className="col-md-6">
+        <div id="store-product-details" className="store__product__details">
+            { productResponse.isLoading && <Loader visible={productResponse.isLoading} /> }
+            <div id="store-product-details-container" className={`${ productResponse.isLoading ? "d-none " : "" } store__product__details--container container mt-5`}>
+                <div id='store-product-details-body' className="store__product__details--body row">
+                    <div className="col-md-2"></div>
+                    <div className="store__product__details--image col-md-4">
                         <img src={product.image} alt={product.title} className="img-fluid"/>
                     </div>
-                    <div className="col-md-6">
-                        <h2>{product.title}</h2>
-                        <p className="price">US${product.price}</p>
+                    <section id="store-product-details-info" className="store__product__details--info col-md-6">
+                        <h2 id="store-product-details-info-title" className="store__product__details__info--title">
+                            {product.title}
+                        </h2>
+                        <p className="store__product__details__info--price">US${product.price}</p>
 
                         <button onClick={() => addToCartAndNavigate(product)}
                                 className="btn btn-warning mt-3 mb-3 me-2">
                             <FontAwesomeIcon icon="shopping-cart"/> Add to cart
                         </button>
-                        <button onClick={() => addProductToWishlist(product)} className="btn btn-outline-danger mt-3 mb-3"><FontAwesomeIcon icon="heart"/></button>
+                        <button onClick={() => addProductToWishlist(product)}
+                                className="btn btn-outline-danger mt-3 mb-3">
+                            <FontAwesomeIcon icon="heart"/>
+                        </button>
 
-                        <div className="accordion" id="productDetails">
+                        <div
+                            id="store-product-details-info-description"
+                            className="store__product__details__info--description accordion"
+                        >
                             <div className="accordion-item">
                                 <h2 className="accordion-header" id="headingOne">
                                     <button
@@ -56,15 +65,15 @@ export const ProductDetails = () => {
                                     id="collapseOne"
                                     className="accordion-collapse collapse show"
                                     aria-labelledby="headingOne"
-                                    data-bs-parent="#productDetails"
+                                    data-bs-parent="#store-product-details-info-description"
                                 >
                                     <div className="accordion-body">
-                                        <p className="text-justify">{product.description}</p>
+                                        <p className="store__product__details__info--description--description">{product.description}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>

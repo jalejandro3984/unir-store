@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Store } from "./views/Store";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from '@fortawesome/free-solid-svg-icons';
+
+import './styles/main.css';
 
 library.add(fas);
 

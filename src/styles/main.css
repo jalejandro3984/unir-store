@@ -1,72 +1,24 @@
-footer {
-    /*position: fixed;*/
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-    text-align: center;
-    background-color: #f2f2f2;
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-header {
-    position: relative;
-    top: 0;
-    width: 100%;
-    height: auto;
-    text-align: center;
-}
-
-.logo {
-    width: 10%;
-    height: 10%;
-    margin: 10px;
-}
-
-.product-image {
-    margin-top: 30px;
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
-    background-color: #ffffff;
-}
-
-.card-body {
+html, body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Espacia contenido igualmente */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.product-description {
-    min-height: 100px; /* Altura mínima para la descripción */
-}
-
-.product-price {
-    min-height: 20px; /* Altura mínima para el precio */
-}
-
-.buy-button {
-    margin-top: auto; /* Empuja el botón hacia abajo */
-}
-
-.price {
-    font-size: 24px;
-    color: green;
-}
-
-.product-colors {
-    margin-bottom: 20px;
-}
-
-.shipping-info p {
-    font-size: 16px;
-    color: gray;
-}
-
-.wishlist {
-    color: darkred;
-    background: white;
-}
-
-.wishlist:hover {
-    color: white;
-    background: darkred;
+div#root {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
 }
