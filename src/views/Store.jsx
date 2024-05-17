@@ -48,6 +48,7 @@ export const Store = () => {
             <StoreContext.Provider value={{
                 cartProducts,
                 wishlist,
+                setCartProducts,
                 addProductToCart,
                 removeProductFromCart,
                 addProductToWishlist,
