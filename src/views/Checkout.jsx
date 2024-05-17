@@ -47,6 +47,7 @@ export const Checkout = () => {
                 <div className="card-body">
                     <p><strong>Order total: USD${total}</strong></p>
                     <button
+                        disabled={cartProducts.length === 0}
                         onClick={() => navigate('/checkout/success')}
                         className="btn btn-primary"
                     >
