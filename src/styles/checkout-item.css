@@ -1,0 +1,9 @@
+.store__checkout__item--image {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.store__checkout__item__button--delete {
+    margin-left: 10px;
+}

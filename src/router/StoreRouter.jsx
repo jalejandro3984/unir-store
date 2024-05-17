@@ -7,6 +7,8 @@ import { ProductDetails } from "../views/ProductDetails";
 import { Cart } from "../views/Cart";
 import { CategoryList } from "../views/CategoryList";
 import { Wishlist } from "../views/Wishlist";
+import {Checkout} from "../views/Checkout";
+import { CheckoutSuccess } from "../views/CheckoutSuccess";
 
 export const StoreRouter = () => {
     return (
@@ -16,6 +18,8 @@ export const StoreRouter = () => {
                 <Route path="/" element={<Home />}/>
                 <Route path="/cart/" element={<Cart />}/>
                 <Route path="/category/:category" element={<CategoryList />}/>
+                <Route path="/checkout/" element={<Checkout />}/>
+                <Route path="/checkout/success/" element={<CheckoutSuccess />}/>
                 <Route path="/products" element={<ProductList />}/>
                 <Route path="/products/:id" element={<ProductDetails />}/>
                 <Route path="/products/search/:term" element={<ProductList />}/>
