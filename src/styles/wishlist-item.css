@@ -1,0 +1,9 @@
+.store__wishlist__item__body__price, .store__wishlist__item__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.store__wishlist__item__body__price--price {
+    text-align: end;
+}

@@ -1,0 +1,16 @@
+.store__product__details__info--description--description {
+    text-align: justify-all;
+}
+
+.store__product__details__info--price {
+    font-size: 24px;
+    color: green;
+}
+
+.store__product__details--image img {
+    max-height: 400px;
+    width: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}

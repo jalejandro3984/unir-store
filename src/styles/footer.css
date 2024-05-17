@@ -1,0 +1,13 @@
+.store__footer {
+    margin-top: auto;
+    height: 60px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store__footer--copyright {
+    text-align: center;
+}
