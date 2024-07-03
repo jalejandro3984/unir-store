@@ -9,6 +9,7 @@ import "../styles/store.css";
 export const Store = () => {
     const [cartProducts, setCartProducts] = React.useState([]);
     const [wishlist, setWishlist] = React.useState([]);
+    // const [quantity, setQuantity] = React.useState(1);
 
     const addProductToCart = (product) => {
         let productInCart = cartProducts.find((item) => item.id === product.id);
@@ -20,7 +21,6 @@ export const Store = () => {
             setCartProducts([...cartProducts, product]);
         }
     };
-
     const removeProductFromCart = (product) => {
         let productInCart = cartProducts.find((item) => item.id === product.id);
         if (productInCart.quantity > 1) {
@@ -30,17 +30,22 @@ export const Store = () => {
             setCartProducts(cartProducts.filter((item) => item.id !== product.id));
         }
     };
-
     const addProductToWishlist = (product) => {
         let productInWishlist = wishlist.find((item) => item.id === product.id);
         if (!productInWishlist) {
             setWishlist([...wishlist, product]);
         }
     };
-
     const removeProductFromWishlist = (product) => {
         setWishlist(wishlist.filter((item) => item.id !== product.id));
     };
+    // const incrementQuantity = (quantity) => {
+    //     setQuantity(prevQuantity => prevQuantity + 1);
+    // };
+
+    // const decrementQuantity = (quantity) => {
+    //     setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1)); // Evitar que la cantidad sea menor que 1
+    // };
 
     return (
         <div className="store">
@@ -52,7 +57,9 @@ export const Store = () => {
                 addProductToCart,
                 removeProductFromCart,
                 addProductToWishlist,
-                removeProductFromWishlist
+                removeProductFromWishlist,
+                // incrementQuantity,
+                // decrementQuantity
             }}>
                 <StoreRouter/>
             </StoreContext.Provider>

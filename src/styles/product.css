@@ -14,3 +14,24 @@
     min-height: 20px;
     color: green;
 }
+
+.product__card {
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .product__card {
+        width: 30%;
+        /* 2 cards por línea en pantallas medianas */
+    }
+}
+
+@media (min-width: 992px) {
+    .product__card {
+        width: 20%;
+        /* 4 cards por línea en pantallas grandes */
+    }
+}
