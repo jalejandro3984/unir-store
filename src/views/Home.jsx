@@ -4,16 +4,15 @@ import { Category } from "./Category";
 import { Loader } from "../components/Loader";
 
 export const Home = () => {
-    const categories = useFetch('products/categories');
-
+    const categories = useFetch('categories');
     return (
         <div>
             <div className="text-center">
-                {categories.isLoading && <Loader visible={categories.isLoading}/>}
+                {categories.isLoading && <Loader visible={categories.isLoading} />}
             </div>
             <div className="container">
                 <div className="row">
-                    {categories.fetchResponse.map((category, key) => <Category key={key} category={category}/>)}
+                    {categories.fetchResponse.map((category, index) => <Category key={index} index={index} category={category.name}/>)}
                 </div>
             </div>
         </div>

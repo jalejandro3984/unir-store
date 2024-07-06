@@ -3,7 +3,7 @@ import { StoreContext } from "./StoreContext";
 
 import "../styles/cart-item.css";
 
-export const CartItem = ({item}) => {
+export const CartItem = ({ item }) => {
     const { removeProductFromCart, addProductToWishlist } = useContext(StoreContext);
 
     const saveForLater = (item) => {
@@ -16,7 +16,7 @@ export const CartItem = ({item}) => {
             <div className="list-group-item my-1 rounded-2">
                 <div className="row g-0">
                     <div className="col-md-2">
-                        <img src={item.image} alt={item.title} className="img-fluid rounded-start"/>
+                        <img src={item.image} alt={item.title} className="img-fluid rounded-start" />
                     </div>
                     <div className="store__cart__item__info col-md-8">
                         <div className="store__cart__item__info mx-4">
@@ -24,10 +24,10 @@ export const CartItem = ({item}) => {
                             <p>Qty: {item.quantity}</p>
                             <p>
                                 <button onClick={() => saveForLater(item)}
-                                        className="btn btn-primary btn-sm me-2">Save for later
+                                    className="btn btn-primary btn-sm me-2">Save for later
                                 </button>
                                 <button onClick={() => removeProductFromCart(item)}
-                                        className="btn btn-outline-danger btn-sm">Delete
+                                    className="btn btn-outline-danger btn-sm">Delete
                                 </button>
                             </p>
                         </div>

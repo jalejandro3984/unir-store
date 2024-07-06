@@ -4,14 +4,13 @@ import { useNavigate } from 'react-router-dom';
 
 import '../styles/product.css';
 
-export const Product = ({product, show_description}) => {
+export const Product = ({ product, show_description }) => {
     const navigate = useNavigate();
     const handleCardClick = () => {
         navigate(`/products/${product.id}`);
     };
-
     return (
-        <Card className="m-2" style={{ width: '18rem', cursor: 'pointer' }} onClick={handleCardClick}>
+        <Card className="m-2 product__card" onClick={handleCardClick}>
             <div style={{ height: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Card.Img variant="top" src={product.image} className="product__image" />
             </div>
