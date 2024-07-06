@@ -10,8 +10,8 @@ import "../styles/product-details.css";
 
 export const ProductDetails = () => {
     const { id } = useParams();
-    const path = `products/${id}`;
-    const productResponse = useFetch(path);
+    const url = `${process.env.REACT_API_URL_BUSCADOR}/products/${id}`;
+    const productResponse = useFetch(url);
     const product = productResponse.fetchResponse;
     const { addProductToCart, addProductToWishlist } = useContext(StoreContext);
     const navigate = useNavigate();

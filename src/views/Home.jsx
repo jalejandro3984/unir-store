@@ -4,7 +4,8 @@ import { Category } from "./Category";
 import { Loader } from "../components/Loader";
 
 export const Home = () => {
-    const categories = useFetch('categories');
+    let url = `${process.env.REACT_APP_API_URL}/categories`;
+    const categories = useFetch(url);
     return (
         <div>
             <div className="text-center">

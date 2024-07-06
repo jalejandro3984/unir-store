@@ -7,7 +7,7 @@ import { ProductDetails } from "../views/ProductDetails";
 import { Cart } from "../views/Cart";
 import { CategoryList } from "../views/CategoryList";
 import { Wishlist } from "../views/Wishlist";
-import {Checkout} from "../views/Checkout";
+import { Checkout } from "../views/Checkout";
 import { CheckoutSuccess } from "../views/CheckoutSuccess";
 
 export const StoreRouter = () => {
@@ -22,7 +22,7 @@ export const StoreRouter = () => {
                 <Route path="/checkout/success/" element={<CheckoutSuccess />}/>
                 <Route path="/products" element={<ProductList />}/>
                 <Route path="/products/:id" element={<ProductDetails />}/>
-                <Route path="/products/search/:term" element={<ProductList />}/>
+                <Route path="/products/search/:keyword" element={<ProductList />}/>
                 <Route path="/wishlist/" element={<Wishlist />}/>
             </Routes>
         </Router>

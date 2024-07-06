@@ -6,8 +6,8 @@ import { Loader } from "../components/Loader";
 
 export const CategoryList = () => {
     const { category } = useParams();
-    const path = (!category) ? 'categories' : `categories/${category}/products`;
-    const categoryProductList = useFetch(path);
+    const url = (!category) ? `${process.env.REACT_APP_API_URL}/categories` : `${process.env.REACT_APP_API_URL}/categories/${category}/products`;
+    const categoryProductList = useFetch(url);
     return (
         <div>
             <h1 className="text-capitalize m-3">{category}</h1>

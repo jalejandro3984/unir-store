@@ -5,14 +5,14 @@ import { Loader } from "../components/Loader";
 import { useParams } from "react-router-dom";
 
 export const ProductList = () => {
-    const response = useFetch('products');
+    const { keyword } = useParams();
+    let url = `${process.env.REACT_APP_API_URL_BUSCADOR}/products`;
+    if (keyword) {
+        url = `${url}/?keyword=${keyword}`;
+    }
+    const response = useFetch(url);
     let products = response.fetchResponse;
     const isLoading = response.isLoading;
-    const { term } = useParams();
-
-    if (term) {
-        products = products.filter(product => product.title.toLowerCase().includes(term.toLowerCase()));
-    }
 
     return (
         <div>
